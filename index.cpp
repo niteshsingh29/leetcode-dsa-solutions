@@ -77,3 +77,53 @@ int main() {
 	}
 	return 0;
 }
+
+//groups question
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+//utils functions
+int unique(int arr[],int n) {
+    set<int> S;
+    for (int i = 0; i < n; i++) {
+        S.insert(arr[i]);
+    }
+    int unique = S.size();
+    return unique;
+}
+
+void findAns() {
+    string s;
+    cin >> s;
+    
+    bool flag = false;
+    int group = 0;
+    for(int i=0; i<s.size(); i++) {
+        
+        if (s[i] == '0') {
+            flag = false;
+        }
+        
+        if (s[i] == '1') {
+            if (!flag) { 
+                group += 1;
+                flag = true;
+            } else {
+                continue;
+            }
+        }
+    }
+    
+    cout << group << endl;
+    
+}
+int main() {
+	// your code goes here
+	int tc;
+	cin >> tc;
+	while (tc--) 
+	{
+	    findAns();
+	}
+	return 0;
+}
