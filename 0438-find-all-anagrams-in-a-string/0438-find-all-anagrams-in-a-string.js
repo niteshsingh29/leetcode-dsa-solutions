@@ -24,6 +24,7 @@ var findAnagrams = function(s, p) {
         if (JSON.stringify(pHash) === JSON.stringify(sHash)) {
             res.push(i)
         }
+        //sliding window, removing first adding next
         sHash[s[i].charCodeAt(0) - 97]--;
         sHash[s[i+(p.length)]?.charCodeAt(0) - 97]++;
     }
