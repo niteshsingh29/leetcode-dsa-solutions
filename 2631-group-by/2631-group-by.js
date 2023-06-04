@@ -2,18 +2,17 @@
  * @param {Function} fn
  * @return {Array}
  */
-Array.prototype.groupBy = function(fn) {
-    let hashMap = {};
-    
-    this.forEach((item) => {
-        let key = fn(item)
-        if(!hashMap[key]) {
-            hashMap[key] = [];
-        }
-         hashMap[key].push(item);
-        
-    })
-    return hashMap;
+Array.prototype.groupBy = function (fn) {
+  let hashMap = {};
+
+  this.forEach((item) => {
+    let key = fn(item);
+    if (!hashMap[key]) {
+      hashMap[key] = [];
+    }
+    hashMap[key].push(item);
+  });
+  return hashMap;
 };
 
 /**
